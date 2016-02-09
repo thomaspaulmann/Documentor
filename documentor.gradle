@@ -1,0 +1,21 @@
+task generateJavadoc(type: Javadoc) {
+    // Javadoc
+    source         = android.sourceSets.main.java.srcDirs
+    destinationDir = file("../javadoc/")
+    classpath     += project.files(android.getBootClasspath().join(File.pathSeparator))
+    group          = "javadoc"
+
+    // Options
+    options {
+        links("http://docs.oracle.com/javase/7/docs/api/")
+        linksOffline("http://d.android.com/reference", "${android.sdkDirectory}/docs/reference")
+
+        if (JavaVersion.current().isJava8Compatible()) {
+            addStringOption('Xdoclint:none', '-quiet')
+        }
+    }
+
+    // Exclude Android specific files
+    exclude '**/BuildConfig.java'
+    exclude '**/R.java'
+}
