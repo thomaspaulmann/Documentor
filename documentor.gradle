@@ -1,4 +1,12 @@
+def getExclude() {
+    return hasProperty('DOCUMENTOR_EXCLUDE') ? DOCUMENTOR_EXCLUDE : ""
+}
+
 task generateJavadoc(type: Javadoc) {
+    println "#####################################"
+    println "# Start generating Javadoc"
+    println "#"
+
     // Javadoc
     source         = android.sourceSets.main.java.srcDirs
     destinationDir = file("../javadoc/")
@@ -15,7 +23,14 @@ task generateJavadoc(type: Javadoc) {
         }
     }
 
+    println "# Excluded files from javadoc"
+    println "# - " + getExclude()
+
     // Exclude Android specific files
-    exclude '**/BuildConfig.java'
-    exclude '**/R.java'
+    exclude '**/BuildConfig.java', '**/R.java'
+    exclude getExclude()
+
+    println "# "
+    println "# Finished generating Javadoc"
+    println "#####################################"
 }
