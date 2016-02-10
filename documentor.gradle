@@ -6,7 +6,7 @@ def getOutputDir() {
     return hasProperty('DOCUMENTOR_OUTPUT_DIR') ? DOCUMENTOR_OUTPUT_DIR : "../documentor/"
 }
 
-task generateJavadoc(type: Javadoc) {
+task document(type: Javadoc) {
     // Setup Javadoc
     source         = android.sourceSets.main.java.srcDirs
     destinationDir = file(getOutputDir())
