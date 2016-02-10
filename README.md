@@ -9,5 +9,5 @@ android {
   [...]
 }
 
-apply from: 'https://raw.githubusercontent.com/thomaspaulmann/Documentor/master/documentor.gradle'
+apply from: 'https://raw.githubusercontent.com/thomaspaulmann/Documentor/release-1.0/documentor.gradle'
  ```
