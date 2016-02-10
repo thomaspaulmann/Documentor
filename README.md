@@ -16,7 +16,7 @@ apply from: 'https://raw.githubusercontent.com/thomaspaulmann/Documentor/release
 Now you're good to go and should have a task called `document`. Run it and enjoy your Javadocs. :cat: 
 
 ```
-$ gradle clean build uploadArchives
+$ gradle clean build document
 ```
 
 ## Configuration
