@@ -1,5 +1,3 @@
-[![License](http://img.shields.io/:license-apache-brightgreen.svg?style=flat)](https://raw.githubusercontent.com/thomaspaulmann/Documentor/master/LICENSE)
-
 # Documentor
 Documentor is a gradle script to generate Javadocs for Android.
 
@@ -38,3 +36,5 @@ Furthermore, you can specify the ouptut directory of your generated javadocs:
 ```
 DOCUMENTOR_OUTPUT_DIR=../documentation/
 ```
+
+[![License](http://img.shields.io/:license-apache-brightgreen.svg?style=flat)](https://raw.githubusercontent.com/thomaspaulmann/Documentor/master/LICENSE)
