@@ -2,15 +2,19 @@ def getExclude() {
     return hasProperty('DOCUMENTOR_EXCLUDE') ? DOCUMENTOR_EXCLUDE : ""
 }
 
+def getDestinationDir() {
+    return hasProperty('DOCUMENTOR_DESTINATION_DIR') ? DOCUMENTOR_DESTINATION_DIR : "../javadoc/"
+}
+
 task generateJavadoc(type: Javadoc) {
-
-    // Javadoc
+    // Setup Javadoc
     source         = android.sourceSets.main.java.srcDirs
-    destinationDir = file("../javadoc/")
+    destinationDir = file(getDestinationDir())
     classpath     += project.files(android.getBootClasspath().join(File.pathSeparator))
-    group          = "javadoc"
+    group          = "documentor"
+    description    = "Generate your awesome Javadocs!"
 
-    // Options
+    // Setup standard links to Java + Android documentation
     options {
         links("http://docs.oracle.com/javase/7/docs/api/")
         linksOffline("http://d.android.com/reference", "${android.sdkDirectory}/docs/reference")
@@ -20,9 +24,9 @@ task generateJavadoc(type: Javadoc) {
         }
     }
 
-
     // Exclude Android specific files
     exclude '**/BuildConfig.java', '**/R.java'
 
     // Exclude configured files
+    exclude getExclude().split(',')
 }
