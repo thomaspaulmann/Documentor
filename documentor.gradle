@@ -28,7 +28,6 @@ task generateJavadoc(type: Javadoc) {
     exclude '**/BuildConfig.java', '**/R.java'
 
     // Exclude configured files
-    exclude getExclude()
 
     println "# Excluded files from javadoc"
     println "# - " + getExclude()
