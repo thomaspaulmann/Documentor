@@ -23,13 +23,13 @@ $ gradle clean build document
 Documentor gives you the possibility to exclude specific files. To ignore a specific path, add `DOCUMENTOR_EXCLUDE` to your gradle.properties:
 
 ```
-DOCUMENTOR_EXCLUDE=com/google/android/*
+DOCUMENTOR_EXCLUDES=com/google/android/*
  ```
  
 It's also possible to exclude multiple paths. Simply separate them with a comma:
  
 ```
-DOCUMENTOR_EXCLUDE=com/google/android/*,com/thomaspaulmann/*
+DOCUMENTOR_EXCLUDES=com/google/android/*,com/thomaspaulmann/*
  ```
 Furthermore, you can specify the ouptut directory of your generated javadocs:
 
