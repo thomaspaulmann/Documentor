@@ -2,14 +2,14 @@ def getExcludes() {
     return hasProperty('DOCUMENTOR_EXCLUDE') ? DOCUMENTOR_EXCLUDE : ""
 }
 
-def getDestinationDir() {
-    return hasProperty('DOCUMENTOR_DESTINATION_DIR') ? DOCUMENTOR_DESTINATION_DIR : "../javadoc/"
+def getOutputDir() {
+    return hasProperty('DOCUMENTOR_OUTPUT_DIR') ? DOCUMENTOR_OUTPUT_DIR : "../documentor/"
 }
 
 task generateJavadoc(type: Javadoc) {
     // Setup Javadoc
     source         = android.sourceSets.main.java.srcDirs
-    destinationDir = file(getDestinationDir())
+    destinationDir = file(getOutputDir())
     classpath     += project.files(android.getBootClasspath().join(File.pathSeparator))
     group          = "documentor"
     description    = "Generate your awesome Javadocs!"
