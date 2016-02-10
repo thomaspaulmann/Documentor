@@ -13,7 +13,11 @@ android {
 apply from: 'https://raw.githubusercontent.com/thomaspaulmann/Documentor/release-1.1/documentor.gradle'
  ```
 
-You should have a task called `document`. Run it and enjoy your Javadocs. :cat: 
+Now you're good to go and should have a task called `document`. Run it and enjoy your Javadocs. :cat: 
+
+```
+$ gradle clean build uploadArchives
+```
 
 ## Configuration
 Documentor gives you the possibility to exclude specific files. To ignore a specific path, add `DOCUMENTOR_EXCLUDE` to your gradle.properties:
