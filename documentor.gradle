@@ -1,4 +1,4 @@
-def getExclude() {
+def getExcludes() {
     return hasProperty('DOCUMENTOR_EXCLUDE') ? DOCUMENTOR_EXCLUDE : ""
 }
 
@@ -28,5 +28,5 @@ task generateJavadoc(type: Javadoc) {
     exclude '**/BuildConfig.java', '**/R.java'
 
     // Exclude configured files
-    exclude getExclude().split(',')
+    exclude getExcludes().split(',')
 }
