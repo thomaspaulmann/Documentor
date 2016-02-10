@@ -3,9 +3,6 @@ def getExclude() {
 }
 
 task generateJavadoc(type: Javadoc) {
-    println "#####################################"
-    println "# Start generating Javadoc"
-    println "#"
 
     // Javadoc
     source         = android.sourceSets.main.java.srcDirs
@@ -28,10 +25,4 @@ task generateJavadoc(type: Javadoc) {
     exclude '**/BuildConfig.java', '**/R.java'
 
     // Exclude configured files
-
-    println "# Excluded files from javadoc"
-    println "# - " + getExclude()
-    println "# "
-    println "# Finished generating Javadoc"
-    println "#####################################"
 }
