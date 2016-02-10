@@ -3,7 +3,7 @@ def getDocumentorExcludes() {
 }
 
 def getDocumentorOutputDir() {
-    return hasProperty('DOCUMENTOR_OUTPUT_DIR') ? DOCUMENTOR_OUTPUT_DIR : "../documentor/"
+    return hasProperty('DOCUMENTOR_OUTPUT_DIR') ? DOCUMENTOR_OUTPUT_DIR : "../documentation/"
 }
 
 task document(type: Javadoc) {
