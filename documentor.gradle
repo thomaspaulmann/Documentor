@@ -1,5 +1,5 @@
 def getDocumentorExcludes() {
-    return hasProperty('DOCUMENTOR_EXCLUDE') ? DOCUMENTOR_EXCLUDE : ""
+    return hasProperty('DOCUMENTOR_EXCLUDES') ? DOCUMENTOR_EXCLUDES : ""
 }
 
 def getDocumentorOutputDir() {
