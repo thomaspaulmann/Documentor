@@ -9,6 +9,7 @@ android {
   [...]
 }
 
+// Documentor
 apply from: 'https://raw.githubusercontent.com/thomaspaulmann/Documentor/release-1.1/documentor.gradle'
  ```
 
