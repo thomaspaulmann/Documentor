@@ -9,7 +9,7 @@ android {
   [...]
 }
 
-apply from: 'https://raw.githubusercontent.com/thomaspaulmann/Documentor/release-1.0/documentor.gradle'
+apply from: 'https://raw.githubusercontent.com/thomaspaulmann/Documentor/release-1.1/documentor.gradle'
  ```
 
 You should have a task called `document`. Run it and enjoy your Javadocs. :cat: 
