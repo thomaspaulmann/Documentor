@@ -1,3 +1,5 @@
+[![License](http://img.shields.io/:license-apache-brightgreen.svg?style=flat)](https://raw.githubusercontent.com/thomaspaulmann/Documentor/master/LICENSE)
+
 # Documentor
 Documentor is a gradle script to generate Javadocs for Android.
 
