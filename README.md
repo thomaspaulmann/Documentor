@@ -1,42 +1,58 @@
+[![Build Status](https://travis-ci.org/thomaspaulmann/Documentor.svg?branch=master)](https://travis-ci.org/thomaspaulmann/Documentor) [![License](http://img.shields.io/:license-apache-brightgreen.svg?style=flat)](https://raw.githubusercontent.com/thomaspaulmann/Documentor/master/LICENSE)
+
 # Documentor
 Documentor is a gradle script to generate Javadocs for Android.
 
 ## Usage
-Reference the master script after the android configuration from your module's build.gradle:
+1. Add the following lines to your root build.gradle:
 
-```groovy
-android {
-  [...]
-}
+ ``` gradle
+ buildscript {
+   repositories {
+     maven {
+       url "https://plugins.gradle.org/m2/"
+     }
+   }
+   dependencies {
+     classpath "gradle.plugin.com.thomaspaulmann:Documentor:1.0"
+   }
+ }
+  ```
 
-// Documentor
-apply from: 'https://raw.githubusercontent.com/thomaspaulmann/Documentor/release-1.1/documentor.gradle'
+2. Reference the plugin from your module's build.gradle:
+
+ ``` gradle
+ apply plugin: "com.thomaspaulmann.documentor"
  ```
 
-Now you're good to go and should have a task called `document`. Run it and enjoy your Javadocs. :cat: 
+3. Now you're good to go and should have some tasks in the `documentor` gradle group called `documentDebug`, `documentRelease` and `deleteDocs`. Run one of the tasks and enjoy your beautiful Javadocs. :cat: 
 
-```
-$ gradle clean build document
-```
+ ``` gradle
+ $ gradle clean build documentDebug
+ ```
 
-Also available as an official Gradle Plugin [Gradle Plugin](https://plugins.gradle.org/plugin/com.thomaspaulmann.documentor).
+Note: The plugin is available as an official Gradle Plugin [Gradle Plugin](https://plugins.gradle.org/plugin/com.thomaspaulmann.documentor).
 
 ## Configuration
-Documentor gives you the possibility to exclude specific files. To ignore a specific path, add `DOCUMENTOR_EXCLUDE` to your gradle.properties:
+Documentor gives you the possibility to exclude specific files. To ignore a specific path, reference the `documentor` extension in your module's build.gradle and add your files to the `excludes` option:
 
+``` gradle
+documentor {
+    excludes = ["**/ExcludeActivity.java"]
+}
 ```
-DOCUMENTOR_EXCLUDES=com/google/android/*
- ```
+It's also possible to exclude complete paths or multiple files. Simply separate them with a comma:
  
-It's also possible to exclude multiple paths. Simply separate them with a comma:
- 
-```
-DOCUMENTOR_EXCLUDES=com/google/android/*,com/thomaspaulmann/*
- ```
-Furthermore, you can specify the ouptut directory of your generated javadocs:
-
-```
-DOCUMENTOR_OUTPUT_DIR=../documentation/
+``` gradle
+documentor {
+    excludes = ["**/exclude/**", "**/ExcludeActivity.java"]
+}
 ```
 
-[![License](http://img.shields.io/:license-apache-brightgreen.svg?style=flat)](https://raw.githubusercontent.com/thomaspaulmann/Documentor/master/LICENSE)
+Furthermore, you can specify the ouptut directory (relative to your project directory) of your generated javadocs:
+
+``` gradle
+documentor {
+    outputDir = "documentation"
+}
+```
