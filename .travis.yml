@@ -1,0 +1,16 @@
+language: groovy
+
+groovy:
+    - 2.4.5
+
+jdk:
+    - oraclejdk8
+
+script: ./gradlew clean build
+
+branches:
+    except:
+        - gh-pages
+
+notifications:
+    email: false
