@@ -8,12 +8,15 @@ import org.gradle.external.javadoc.JavadocMemberLevel;
 
 class DocumentorPlugin implements Plugin<Project> {
 
+    /* Setup */
+
     def void apply(Project project) {
         if (project == null || !project.hasProperty("android")) {
+            // No Android project found
             throw new UnsupportedOperationException("Documentor is specialized for Android and you're not using an Android Project. What's wrong with you? ;-)")
         }
 
-        // Add extension object
+        // Add extension
         project.extensions.create("documentor", DocumentorExtension)
 
         // Add documentation tasks
@@ -31,6 +34,8 @@ class DocumentorPlugin implements Plugin<Project> {
         // Add deletion task
         addDeletionTask(project);
     }
+
+    /* Documentation Tasks */
 
     def private static Task addDocumentationTasks(Project project, DomainObjectCollection<BaseVariant> variants) {
         variants.all { variant ->
@@ -62,6 +67,8 @@ class DocumentorPlugin implements Plugin<Project> {
             }
         }
     }
+
+    /* Deletion Task */
 
     def private static void addDeletionTask(Project project) {
         project.clean.dependsOn project.task("deleteDocs", type: Delete) {
