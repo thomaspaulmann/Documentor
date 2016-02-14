@@ -1,0 +1,24 @@
+// This is a short sample for better understanding.
+// Copy/Paste the code and run it wherever you wanna have Javadocs.
+
+// Add Documentor Dependency
+buildscript {
+  repositories {
+      maven {
+          url "https://plugins.gradle.org/m2/"
+      }
+  }
+
+  dependencies {
+      classpath "gradle.plugin.com.thomaspaulmann:Documentor:1.0"
+  }
+}
+
+// Apply Documentor
+apply plugin: "com.thomaspaulmann.documentor"
+
+// Config Documentor
+documentor {
+    excludes  = ["**/exclude/**", "**/ExcludeActivity.java"]
+    outputDir = "documentation"
+}
