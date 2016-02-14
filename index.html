@@ -19,7 +19,9 @@
     </section>
 
     <section class="main-content">
-      <h1>
+      <p><a href="https://travis-ci.org/thomaspaulmann/Documentor"><img src="https://travis-ci.org/thomaspaulmann/Documentor.svg?branch=master" alt="Build Status"></a> <a href="https://raw.githubusercontent.com/thomaspaulmann/Documentor/master/LICENSE"><img src="http://img.shields.io/:license-apache-brightgreen.svg?style=flat" alt="License"></a></p>
+
+<h1>
 <a id="documentor" class="anchor" href="#documentor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentor</h1>
 
 <p>Documentor is a gradle script to generate Javadocs for Android.</p>
@@ -27,39 +29,61 @@
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Reference the master script after the android configuration from your module's build.gradle:</p>
+<ol>
+<li>
+<p>Add the following lines to your root build.gradle:</p>
 
-<div class="highlight highlight-source-groovy"><pre>android {
-  [<span class="pl-k">..</span><span class="pl-k">.</span>]
-}
+<div class="highlight highlight-source-groovy-gradle"><pre><span class="pl-en">buildscript</span> {
+  repositories {
+      maven {
+          url <span class="pl-s"><span class="pl-pds">"</span>https://plugins.gradle.org/m2/<span class="pl-pds">"</span></span>
+      }
+  }
 
-<span class="pl-c">// Documentor</span>
-apply <span class="pl-c1">from</span>: <span class="pl-s"><span class="pl-pds">'</span>https://raw.githubusercontent.com/thomaspaulmann/Documentor/release-1.1/documentor.gradle<span class="pl-pds">'</span></span></pre></div>
+  dependencies {
+      classpath <span class="pl-s"><span class="pl-pds">"</span>gradle.plugin.com.thomaspaulmann:Documentor:1.0<span class="pl-pds">"</span></span>
+  }
+}</pre></div>
+</li>
+<li>
+<p>Reference the plugin from your module's build.gradle:</p>
 
-<p>Now you're good to go and should have a task called <code>document</code>. Run it and enjoy your Javadocs. <img class="emoji" title=":cat:" alt=":cat:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f431.png" height="20" width="20" align="absmiddle"> </p>
+<div class="highlight highlight-source-groovy-gradle"><pre>apply <span class="pl-c1">plugin</span>: <span class="pl-s"><span class="pl-pds">"</span>com.thomaspaulmann.documentor<span class="pl-pds">"</span></span></pre></div>
+</li>
+<li>
+<p>Now you're good to go and should have some tasks in the <code>documentor</code> gradle group called <code>documentDebug</code>, <code>documentRelease</code> and <code>deleteDocs</code>. Run one of the tasks and enjoy your beautiful Javadocs. <img class="emoji" title=":cat:" alt=":cat:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f431.png" height="20" width="20" align="absmiddle"> </p>
 
-<pre><code>$ gradle clean build document
-</code></pre>
+<div class="highlight highlight-source-groovy-gradle"><pre>$ gradle clean build documentDebug</pre></div>
+</li>
+</ol>
+
+<p>Note: The plugin is available as an official <a href="https://plugins.gradle.org/plugin/com.thomaspaulmann.documentor">Gradle Plugin</a>.</p>
 
 <h2>
 <a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration</h2>
 
-<p>Documentor gives you the possibility to exclude specific files. To ignore a specific path, add <code>DOCUMENTOR_EXCLUDE</code> to your gradle.properties:</p>
+<p>Documentor gives you the possibility to exclude specific files. To ignore a specific path, reference the <code>documentor</code> extension in your module's build.gradle and add your files to the <code>excludes</code> option:</p>
 
-<pre><code>DOCUMENTOR_EXCLUDES=com/google/android/*
-</code></pre>
+<div class="highlight highlight-source-groovy-gradle"><pre><span class="pl-en">documentor</span> {
+    excludes <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">"</span>**/ExcludeActivity.java<span class="pl-pds">"</span></span>]
+}</pre></div>
 
-<p>It's also possible to exclude multiple paths. Simply separate them with a comma:</p>
+<p>It's also possible to exclude complete paths or multiple files. Simply separate them with a comma:</p>
 
-<pre><code>DOCUMENTOR_EXCLUDES=com/google/android/*,com/thomaspaulmann/*
-</code></pre>
+<div class="highlight highlight-source-groovy-gradle"><pre><span class="pl-en">documentor</span> {
+    excludes <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">"</span>**/exclude/**<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>**/ExcludeActivity.java<span class="pl-pds">"</span></span>]
+}</pre></div>
 
-<p>Furthermore, you can specify the ouptut directory of your generated javadocs:</p>
+<p>Furthermore, you can specify the ouptut directory (relative to your project directory) of your generated javadocs:</p>
 
-<pre><code>DOCUMENTOR_OUTPUT_DIR=../documentation/
-</code></pre>
+<div class="highlight highlight-source-groovy-gradle"><pre><span class="pl-en">documentor</span> {
+    outputDir <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>documentation<span class="pl-pds">"</span></span>
+}</pre></div>
 
-<p><a href="https://raw.githubusercontent.com/thomaspaulmann/Documentor/master/LICENSE"><img src="http://img.shields.io/:license-apache-brightgreen.svg?style=flat" alt="License"></a></p>
+<h2>
+<a id="sample" class="anchor" href="#sample" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample</h2>
+
+<p>I attached a <a href="sample.gradle">sample gradle file</a> for better understanding.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/thomaspaulmann/Documentor">Documentor</a> is maintained by <a href="https://github.com/thomaspaulmann">thomaspaulmann</a>.</span>
