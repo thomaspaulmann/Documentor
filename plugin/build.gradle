@@ -1,5 +1,5 @@
-group 'com.thomaspaulmann'
-version '0.1'
+group   GROUP
+version VERSION
 
 apply plugin: 'groovy'
 apply plugin: 'maven'
@@ -12,6 +12,7 @@ repositories {
 dependencies {
     compile gradleApi()
     compile localGroovy()
+    compile 'com.android.tools.build:gradle:1.5.0'
 }
 
 uploadArchives {
