@@ -34,7 +34,7 @@ version VERSION
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: uri('../maven'))
+            repository(url: uri('maven'))
         }
     }
 }
