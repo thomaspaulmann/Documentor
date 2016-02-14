@@ -19,3 +19,6 @@ local.properties
 # IDE
 .idea/
 *.iml
+
+# Maven artifact
+maven
