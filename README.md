@@ -4,6 +4,7 @@
 Documentor is a gradle script to generate Javadocs for Android.
 
 ## Usage
+
 1. Add the following lines to your root build.gradle:
 
  ``` gradle
@@ -32,9 +33,10 @@ Documentor is a gradle script to generate Javadocs for Android.
  $ gradle clean build documentDebug
  ```
 
-Note: The plugin is available as an official Gradle Plugin [Gradle Plugin](https://plugins.gradle.org/plugin/com.thomaspaulmann.documentor).
+Note: The plugin is available as an official [Gradle Plugin](https://plugins.gradle.org/plugin/com.thomaspaulmann.documentor).
 
 ## Configuration
+
 Documentor gives you the possibility to exclude specific files. To ignore a specific path, reference the `documentor` extension in your module's build.gradle and add your files to the `excludes` option:
 
 ``` gradle
@@ -57,3 +59,7 @@ documentor {
     outputDir = "documentation"
 }
 ```
+
+## Sample
+
+I attached a [sample gradle file](sample.gradle) for better understanding.
