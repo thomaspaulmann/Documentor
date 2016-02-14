@@ -8,16 +8,17 @@ Documentor is a gradle script to generate Javadocs for Android.
 
  ``` gradle
  buildscript {
-   repositories {
-     maven {
-       url "https://plugins.gradle.org/m2/"
-     }
-   }
-   dependencies {
-     classpath "gradle.plugin.com.thomaspaulmann:Documentor:1.0"
-   }
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "gradle.plugin.com.thomaspaulmann:Documentor:1.0"
+    }
  }
-  ```
+ ```
 
 2. Reference the plugin from your module's build.gradle:
 
