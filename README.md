@@ -19,6 +19,8 @@ Now you're good to go and should have a task called `document`. Run it and enjoy
 $ gradle clean build document
 ```
 
+Also available as an official Gradle Plugin [Gradle Plugin](https://plugins.gradle.org/plugin/com.thomaspaulmann.documentor),
+
 ## Configuration
 Documentor gives you the possibility to exclude specific files. To ignore a specific path, add `DOCUMENTOR_EXCLUDE` to your gradle.properties:
 
