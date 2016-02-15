@@ -19,36 +19,37 @@
     </section>
 
     <section class="main-content">
-      <p><a href="https://travis-ci.org/thomaspaulmann/Documentor"><img src="https://travis-ci.org/thomaspaulmann/Documentor.svg?branch=master" alt="Build Status"></a> <a href="https://raw.githubusercontent.com/thomaspaulmann/Documentor/master/LICENSE"><img src="http://img.shields.io/:license-apache-brightgreen.svg?style=flat" alt="License"></a></p>
+      <p><a href="https://travis-ci.org/thomaspaulmann/Documentor"><img src="https://travis-ci.org/thomaspaulmann/Documentor.svg?branch=master" alt="Build Status"></a> <img src="https://img.shields.io/badge/java-7-brightgreen.svg" alt="Java 7 required">
+ <a href="https://raw.githubusercontent.com/thomaspaulmann/Documentor/master/LICENSE"><img src="http://img.shields.io/:license-apache-brightgreen.svg?style=flat" alt="License"></a></p>
 
 <h1>
 <a id="documentor" class="anchor" href="#documentor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentor</h1>
 
-<p>Documentor is a gradle script to generate Javadocs for Android.</p>
+<p>Documentor is a Gradle Plugin to generate Javadocs for Android Code.</p>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
 <ol>
 <li>
-<p>Add the following lines to your root build.gradle:</p>
+<p>Add the following lines to your root build.gradle (<a href="https://github.com/thomaspaulmann/Documentor/releases/latest">Latest Release</a>):</p>
 
 <div class="highlight highlight-source-groovy-gradle"><pre><span class="pl-en">buildscript</span> {
   repositories {
       maven {
-          url <span class="pl-s"><span class="pl-pds">"</span>https://plugins.gradle.org/m2/<span class="pl-pds">"</span></span>
+          url <span class="pl-s"><span class="pl-pds">'</span>https://plugins.gradle.org/m2/<span class="pl-pds">'</span></span>
       }
   }
 
   dependencies {
-      classpath <span class="pl-s"><span class="pl-pds">"</span>gradle.plugin.com.thomaspaulmann:Documentor:1.0<span class="pl-pds">"</span></span>
+      classpath <span class="pl-s"><span class="pl-pds">'</span>gradle.plugin.com.thomaspaulmann:Documentor:X.Y<span class="pl-pds">'</span></span>
   }
 }</pre></div>
 </li>
 <li>
 <p>Reference the plugin from your module's build.gradle:</p>
 
-<div class="highlight highlight-source-groovy-gradle"><pre>apply <span class="pl-c1">plugin</span>: <span class="pl-s"><span class="pl-pds">"</span>com.thomaspaulmann.documentor<span class="pl-pds">"</span></span></pre></div>
+<div class="highlight highlight-source-groovy-gradle"><pre>apply <span class="pl-c1">plugin</span>: <span class="pl-s"><span class="pl-pds">'</span>com.thomaspaulmann.documentor<span class="pl-pds">'</span></span></pre></div>
 </li>
 <li>
 <p>Now you're good to go and should have some tasks in the <code>documentor</code> gradle group called <code>documentDebug</code>, <code>documentRelease</code> and <code>deleteDocs</code>. Run one of the tasks and enjoy your beautiful Javadocs. <img class="emoji" title=":cat:" alt=":cat:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f431.png" height="20" width="20" align="absmiddle"> </p>
@@ -77,13 +78,13 @@
 <p>Furthermore, you can specify the ouptut directory (relative to your project directory) of your generated javadocs:</p>
 
 <div class="highlight highlight-source-groovy-gradle"><pre><span class="pl-en">documentor</span> {
-    outputDir <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>documentation<span class="pl-pds">"</span></span>
+    outputDir <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-s1"><span class="pl-pse">${</span>project.projectDir<span class="pl-pse">}</span></span>/javadoc<span class="pl-pds">"</span></span>
 }</pre></div>
 
 <h2>
 <a id="sample" class="anchor" href="#sample" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample</h2>
 
-<p>I attached a <a href="sample.gradle">sample gradle file</a> for better understanding.</p>
+<p>I attached a <a href="https://github.com/thomaspaulmann/Documentor/blob/master/sample.gradle">sample gradle file</a> for better understanding.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/thomaspaulmann/Documentor">Documentor</a> is maintained by <a href="https://github.com/thomaspaulmann">thomaspaulmann</a>.</span>
