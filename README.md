@@ -11,12 +11,12 @@ Documentor is a gradle script to generate Javadocs for Android.
  buildscript {
     repositories {
         maven {
-            url "https://plugins.gradle.org/m2/"
+            url 'https://plugins.gradle.org/m2/'
         }
     }
 
     dependencies {
-        classpath "gradle.plugin.com.thomaspaulmann:Documentor:1.0"
+        classpath 'gradle.plugin.com.thomaspaulmann:Documentor:1.0'
     }
  }
  ```
@@ -24,7 +24,7 @@ Documentor is a gradle script to generate Javadocs for Android.
 2. Reference the plugin from your module's build.gradle:
 
  ``` gradle
- apply plugin: "com.thomaspaulmann.documentor"
+ apply plugin: 'com.thomaspaulmann.documentor'
  ```
 
 3. Now you're good to go and should have some tasks in the `documentor` gradle group called `documentDebug`, `documentRelease` and `deleteDocs`. Run one of the tasks and enjoy your beautiful Javadocs. :cat: 
@@ -41,14 +41,14 @@ Documentor gives you the possibility to exclude specific files. To ignore a spec
 
 ``` gradle
 documentor {
-    excludes = ["**/ExcludeActivity.java"]
+    excludes = ['**/ExcludeActivity.java']
 }
 ```
 It's also possible to exclude complete paths or multiple files. Simply separate them with a comma:
  
 ``` gradle
 documentor {
-    excludes = ["**/exclude/**", "**/ExcludeActivity.java"]
+    excludes = ['**/exclude/**', '**/ExcludeActivity.java']
 }
 ```
 
@@ -56,7 +56,7 @@ Furthermore, you can specify the ouptut directory (relative to your project dire
 
 ``` gradle
 documentor {
-    outputDir = "documentation"
+    outputDir = 'documentation'
 }
 ```
 
