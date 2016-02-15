@@ -74,6 +74,11 @@ class DocumentorPlugin implements Plugin<Project> {
                 options.links("http://docs.oracle.com/javase/7/docs/api/")
                 options.links("http://developer.android.com/reference/")
 
+                // Disable doclint
+                if (JavaVersion.current().isJava8Compatible()) {
+                    options.addStringOption('Xdoclint:none', '-quiet')
+                }
+
                 // Exclude Android specific files
                 exclude '**/BuildConfig.java'
                 exclude '**/R.java'
