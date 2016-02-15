@@ -41,14 +41,14 @@ Documentor gives you the possibility to exclude specific files. To ignore a spec
 
 ``` gradle
 documentor {
-    excludes = ['**/ExcludeActivity.java']
+    excludes = ["**/ExcludeActivity.java"]
 }
 ```
 It's also possible to exclude complete paths or multiple files. Simply separate them with a comma:
  
 ``` gradle
 documentor {
-    excludes = ['**/exclude/**', '**/ExcludeActivity.java']
+    excludes = ["**/exclude/**", "**/ExcludeActivity.java"]
 }
 ```
 
@@ -56,7 +56,7 @@ Furthermore, you can specify the ouptut directory (relative to your project dire
 
 ``` gradle
 documentor {
-    outputDir = 'documentation'
+    outputDir = "${project.projectDir}/javadoc"
 }
 ```
 
