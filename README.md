@@ -63,4 +63,4 @@ documentor {
 
 ## Sample
 
-I attached a [sample gradle file](https://github.com/thomaspaulmann/Documentor/blob/master/sample.gradle) for better understanding.
+I attached a [sample gradle file](https://github.com/thomaspaulmann/Documentor/blob/master/sample.gradle) for better understanding. Furthermore, I provide you an [Example Android Project](https://github.com/thomaspaulmann/GradlePluginExamples) to see Documentor in action.
