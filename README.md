@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/thomaspaulmann/Documentor.svg?branch=master)](https://travis-ci.org/thomaspaulmann/Documentor) [![License](http://img.shields.io/:license-apache-brightgreen.svg?style=flat)](https://raw.githubusercontent.com/thomaspaulmann/Documentor/master/LICENSE)
+[![Build Status](https://travis-ci.org/thomaspaulmann/Documentor.svg?branch=master)](https://travis-ci.org/thomaspaulmann/Documentor) ![Java 7 required](https://img.shields.io/badge/java-7-brightgreen.svg)
+ [![License](http://img.shields.io/:license-apache-brightgreen.svg?style=flat)](https://raw.githubusercontent.com/thomaspaulmann/Documentor/master/LICENSE)
 
 # Documentor
 Documentor is a gradle script to generate Javadocs for Android.
