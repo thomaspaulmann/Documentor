@@ -92,7 +92,7 @@ class DocumentorPlugin implements Plugin<Project> {
     /* Deletion Task */
 
     def private static void addDeletionTask(Project project) {
-        project.clean.dependsOn project.task("deleteDocs", type: Delete) {
+        project.task("deleteDocs", type: Delete) {
             description = "Deletes all generated Documentations."
             group       = 'Documentor'
 
