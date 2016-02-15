@@ -10,7 +10,8 @@ buildscript {
   }
 
   dependencies {
-      classpath "gradle.plugin.com.thomaspaulmann:Documentor:1.0"
+      // Check for latest release: https://github.com/thomaspaulmann/Documentor/releases
+      classpath "gradle.plugin.com.thomaspaulmann:Documentor:1.2"
   }
 }
 
