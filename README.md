@@ -5,7 +5,7 @@ Documentor is a gradle script to generate Javadocs for Android.
 
 ## Usage
 
-1. Add the following lines to your root build.gradle:
+1. Add the following lines to your root build.gradle ([Latest Release](https://github.com/thomaspaulmann/Documentor/releases/latest)):
 
  ``` gradle
  buildscript {
@@ -16,7 +16,6 @@ Documentor is a gradle script to generate Javadocs for Android.
     }
 
     dependencies {
-        // Grab latest release from: https://github.com/thomaspaulmann/Documentor/releases
         classpath 'gradle.plugin.com.thomaspaulmann:Documentor:X.Y'
     }
  }
