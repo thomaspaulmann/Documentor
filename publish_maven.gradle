@@ -47,7 +47,7 @@ afterEvaluate { project ->
                     // Info
                     name        NAME
                     description DESCRIPTION
-                    url         URL
+                    url         WEBSITE
 
                     // SCM
                     scm {

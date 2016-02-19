@@ -19,8 +19,8 @@ apply plugin: "com.gradle.plugin-publish"
 /* Upload task */
 
 pluginBundle {
-    website = POM_URL
-    vcsUrl  = POM_SCM_URL
+    website = WEBSITE
+    vcsUrl  = SCM_URL
 
     plugins {
         documentorPlugin {
