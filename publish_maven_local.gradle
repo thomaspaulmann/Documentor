@@ -14,39 +14,13 @@
  * limitations under the License.
  */
 
-// Gradle Publishing Plugin
-buildscript {
+apply plugin: 'maven'
+
+/* Upload task */
+uploadArchives {
     repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
+        mavenDeployer {
+            repository(url: uri('maven'))
         }
     }
-    dependencies {
-        classpath "com.gradle.publish:plugin-publish-plugin:0.9.3"
-    }
 }
-
-// Plugins
-apply plugin: 'groovy'
-
-repositories {
-    mavenCentral()
-    jcenter()
-}
-
-dependencies {
-    compile gradleApi()
-    compile localGroovy()
-    compile 'com.android.tools.build:gradle:1.5.0'
-}
-
-// Project
-group   GROUP
-version VERSION
-
-// Publish to Maven (local)
-
-// Publish
-apply from: 'publish_gradle.gradle'
-apply from: 'publish_maven.gradle'
-apply from: 'publish_maven_local.gradle'
