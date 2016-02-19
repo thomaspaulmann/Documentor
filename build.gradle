@@ -44,9 +44,7 @@ dependencies {
 group   GROUP
 version VERSION
 
-// Publish to Maven (local)
-
 // Publish
-apply from: 'publish/publish_gradle.gradle'
-apply from: 'publish/publish_maven.gradle'
-apply from: 'publish/publish_maven_local.gradle'
+apply from: 'https://raw.githubusercontent.com/thomaspaulmann/Publishor/master/publish_gradle.gradle'
+apply from: 'https://raw.githubusercontent.com/thomaspaulmann/Publishor/master/publish_maven.gradle'
+apply from: 'https://raw.githubusercontent.com/thomaspaulmann/Publishor/master/publish_maven_local.gradle'
